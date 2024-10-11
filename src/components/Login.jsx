@@ -11,10 +11,7 @@ const Login = () => {
     const handleSubmit = (event) => {
         event.preventDefault();
 
-        // Obtém os usuários do localStorage ou define como vazio se não houver
         const users = JSON.parse(localStorage.getItem('users')) || [];
-
-        // Verifica se o usuário existe e se a senha está correta
         const user = users.find(user => user.username === username && user.password === password);
 
         if (user) {
@@ -28,16 +25,12 @@ const Login = () => {
     const handleRegister = (event) => {
         event.preventDefault();
 
-        // Obtém os usuários do localStorage ou define como vazio se não houver
         const users = JSON.parse(localStorage.getItem('users')) || [];
-
-        // Verifica se o email já foi cadastrado
         const userExists = users.some(user => user.username === username);
 
         if (userExists) {
             alert('Esse email já está cadastrado.');
         } else {
-            // Adiciona o novo usuário à lista de usuários
             users.push({ username, password });
             localStorage.setItem('users', JSON.stringify(users));
             alert('Cadastro realizado com sucesso! Agora você pode fazer login.');
@@ -51,16 +44,22 @@ const Login = () => {
                 <>
                     <h1>{isRegistering ? 'Cadastre-se' : 'Acesse o Sistema'}</h1>
                     <div className="input-field">
-                        <input type="email" placeholder='Digite seu e-mail' 
-                        required
-                        onChange={(e) => setUsername(e.target.value)} />
                         <FaUser className="icon" />
+                        <input
+                            type="email"
+                            placeholder='Digite seu e-mail'
+                            required
+                            onChange={(e) => setUsername(e.target.value)} 
+                        />
                     </div>
                     <div className="input-field">
-                        <input type='password' placeholder='Digite sua senha'
-                        required
-                        onChange={(e) => setPassword(e.target.value)} />
                         <FaLock className="icon" />
+                        <input
+                            type='password'
+                            placeholder='Digite sua senha'
+                            required
+                            onChange={(e) => setPassword(e.target.value)} 
+                        />
                     </div>
 
                     {!isRegistering && (

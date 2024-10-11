@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import './Todos.css'
+import './Todos.css';
 
 function IMC() {
   const [peso, setPeso] = useState('');
@@ -56,7 +56,7 @@ function IMC() {
           type="number" 
           value={peso} 
           onChange={(e) => setPeso(e.target.value)} 
-          placeholder="Insira o peso em Kg."
+          placeholder="Ex: 70 (Kg)"  // Placeholder para o peso
         />
       </div>
       <div>
@@ -65,7 +65,7 @@ function IMC() {
           type="number" 
           value={altura} 
           onChange={(e) => setAltura(e.target.value)} 
-          placeholder="Insira a altura em cm"
+          placeholder="Ex: 175 (cm)"  // Placeholder para a altura
         />
       </div>
       <div>

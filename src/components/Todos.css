@@ -1,5 +1,3 @@
-/* IMC.css */
-
 /* Centralizar o conteúdo da página e aplicar o fundo preto */
 body {
     margin: 0;
@@ -89,4 +87,41 @@ body {
     font-size: 20px;
     margin-top: 10px;
   }
-  
+
+/* Estilização do container */
+.input-field {
+  position: relative; /* Necessário para que o ícone seja posicionado dentro do input */
+  margin-bottom: 20px; /* Espaçamento entre os campos */
+}
+
+/* Ícone dentro do input */
+.icon {
+  position: absolute;
+  left: 90%;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #e0e0e0; /* Cor do ícone */
+}
+
+/* Lembre de mim e Esqueci a senha */
+.recall-forget {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 10px;
+}
+
+/* Checkbox alinhado à esquerda */
+.recall-forget label {
+  display: inline-flex;
+  align-items: center;
+  font-size: 14px;
+  color: #9e1a1a93;
+}
+
+/* Estilizar o checkbox */
+.recall-forget input[type="checkbox"] {
+  margin-right: auto; /* Espaçamento entre o checkbox e o texto */
+}
+
+
